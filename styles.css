@@ -2,13 +2,13 @@
    VARIABLES Y RESET
    ======================================== */
 :root {
-    --color-primario: #2563eb;
-    --color-secundario: #1e40af;
-    --color-acento: #3b82f6;
-    --color-oscuro: #1e293b;
-    --color-claro: #f8fafc;
-    --color-gris: #64748b;
-    --color-exito: #10b981;
+    --color-primario: #0200ff; /* Azul principal */
+    --color-secundario: #9a89b4; /* Púrpura secundario */
+    --color-acento: #362b48; /* Púrpura oscuro */
+    --color-claro: #e4ecf5; /* Blanco púrpura claro */
+    --color-oscuro: #ffffff; /* Púrpura oscuro */
+    --color-gris: #e8e7ea; /* Púrpura grisáceo */
+    --color-exito: #0200ff; /* Azul para éxito */
     --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
     --sombra-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -25,12 +25,7 @@
 body {
     font-family: var(--fuente-principal);
     line-height: 1.6;
-   
-    background-image: url("assets/img/background.avif");
-    background-size: cover;        /* ocupa toda la pantalla */
-    background-position: center;   /* centra la imagen */
-    background-repeat: no-repeat;  /* evita que se repita */
-    background-attachment: fixed;  /* opcional: efecto fijo al hacer scroll */
+    background-color: #fcf7ff;
 }
 
 .container {
@@ -43,7 +38,7 @@ body {
    NAVEGACIÓN
    ======================================== */
 .navbar {
-    background-color: white;
+    background-color: rgb(2, 22, 67);
     box-shadow: var(--sombra);
     position: fixed;
     width: 100%;
@@ -86,7 +81,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--color-primario);
+    color: #0a090a;
 }
 
 .nav-links a::after {
@@ -122,11 +117,32 @@ body {
    HERO SECTION
    ======================================== */
 .hero {
-    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
-    color: white;
+    background-image: url("assets/img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(11, 23, 43);
     padding: 150px 0 100px;
     text-align: center;
     margin-top: 60px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(165, 199, 210, 0.5); /* Overlay azul semi-transparente */
+    z-index: 1;
+
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -136,7 +152,7 @@ body {
 }
 
 .highlight {
-    color: #60a5fa;
+    color: #2d0e87;
 }
 
 .hero p {
@@ -156,14 +172,14 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: var(--transicion);
-    border: none;
+    border: 25px  ;
     cursor: pointer;
     font-size: 1rem;
 }
 
 .btn-primary {
     background-color: white;
-    color: var(--color-primario);
+    color: #0a090a;
     animation: fadeInUp 1s ease 0.4s backwards;
 }
 
@@ -214,7 +230,14 @@ section {
    SOBRE NOSOTROS
    ======================================== */
 .about {
-    background-color: white;
+    background-color: #221c75;
+}
+.section-title_about {
+    color: #f0eff0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+
 }
 
 .about-content {
@@ -226,7 +249,7 @@ section {
 
 .about-text p {
     margin-bottom: 1.5rem;
-    color: var(--color-gris);
+    color: #e0d6f4;
     font-size: 1.1rem;
 }
 
@@ -252,16 +275,17 @@ section {
 
 .value i {
     font-size: 2.5rem;
-    color: var(--color-primario);
+    color: #07063e;
     margin-bottom: 1rem;
 }
 
 .value h3 {
     margin-bottom: 0.5rem;
-    color: var(--color-oscuro);
+    color: #221c75;
 }
 
 .value p {
+    color: #07063e;
     font-size: 0.9rem;
     margin: 0;
 }
@@ -278,6 +302,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     gap: 1.2rem;
+    color:#0a090a
 }
 
 .member-slot {
@@ -286,11 +311,12 @@ section {
     padding: 1rem;
     text-align: center;
     box-shadow: var(--sombra);
+
 }
 
 .member-avatar {
-    width: 72px;
-    height: 72px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 0 auto 0.8rem;
     background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
@@ -306,7 +332,7 @@ section {
 
 .member-name {
     font-weight: 600;
-    color: var(--color-oscuro);
+    color: #0a090a;
     margin: 0;
 }
 
@@ -314,9 +340,12 @@ section {
    HABILIDADES (GRID)
    ======================================== */
 .skills {
-    background-color: var(--color-claro);
+    background-color: #5aadf031;
 }
 
+.section-title{
+    color: #0a090a;
+}
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -324,7 +353,7 @@ section {
 }
 
 .skill-card {
-    background-color: white;
+    background-color: rgb(10, 5, 120);
     padding: 2rem;
     border-radius: var(--radio-borde);
     box-shadow: var(--sombra);
@@ -338,10 +367,10 @@ section {
 }
 
 .skill-icon {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 120px;
     margin: 0 auto 1.5rem;
-    background-color: var(--color-claro);
+    background-color:#e4ecf5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -350,11 +379,12 @@ section {
 
 .skill-icon i {
     font-size: 2.5rem;
-    color: var(--color-primario);
+    color: #07063e;
 }
 
 .skill-card h3 {
     margin-bottom: 1rem;
+    border-radius: 50px;
     color: var(--color-oscuro);
 }
 
@@ -366,14 +396,14 @@ section {
 .progress-bar {
     width: 100%;
     height: 10px;
-    background-color: var(--color-claro);
+    background-color: #e8e7ea;
     border-radius: 5px;
     overflow: hidden;
 }
 
 .progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
+    background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
     border-radius: 5px;
     transition: width 1s ease;
 }
@@ -381,8 +411,15 @@ section {
 /* ========================================
    CONTACTO
    ======================================== */
-.contact {
-    background-color: var(--color-claro);
+.contact { 
+    background-color: #221c75;
+}
+.section-title_contact {
+    color: #f0eff0;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+
 }
 
 .contact-content {
@@ -405,7 +442,7 @@ section {
 
 .contact-item i {
     font-size: 2rem;
-    color: var(--color-primario);
+    color: #0a090a;
     width: 50px;
     height: 50px;
     background-color: white;
@@ -457,7 +494,7 @@ section {
 .contact-form input,
 .contact-form textarea {
     padding: 1rem;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #84b7ce;
     border-radius: var(--radio-borde);
     font-family: var(--fuente-principal);
     font-size: 1rem;
@@ -508,6 +545,7 @@ section {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        background-color: rgb(19, 20, 20);
     }
 
     .nav-links {
@@ -516,7 +554,7 @@ section {
         right: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background-color: white;
+        background-color: rgb(18, 18, 18);
         flex-direction: column;
         justify-content: center;
         align-items: center;
